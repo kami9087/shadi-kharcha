@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F1E3D">
+<title>Shadi Kharcha</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#F3F5F9;--card:#fff;--ink:#0E1730;--mute:#667089;--line:#E3E7F0;--soft:#ECF0F7;--gold:#AE8532;--nav:#ffffffd9;--red:#C2473A;--grn:#1F8A66;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070C18;--card:#0F1830;--ink:#EEF2FB;--mute:#8D99B8;--line:#1F2C4A;--soft:#16223F;--gold:#E2C27E;--nav:#0F1830d9;--red:#F08A7B;--grn:#5FD1A8}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:560px;margin:0 auto;padding:10px 16px calc(120px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;align-items:center;justify-content:space-between;padding:8px 2px 16px}
+.couple{font:600 26px Fraunces,Georgia,serif;letter-spacing:-.01em}
+.mono{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold);font:600 17px Fraunces,Georgia,serif}
+.pg{display:none}.pg.on{display:block}
+.hero{position:relative;overflow:hidden;border-radius:28px;padding:22px;color:#EAF0FF;background:linear-gradient(140deg,#1D3470 0%,#0F1E3D 55%,#0A1428 100%);border:1px solid #E2C27E40;box-shadow:0 18px 40px -16px #0A142899}
+.hero:before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:1px solid #E2C27E30;box-shadow:0 0 0 28px #E2C27E0a,0 0 0 56px #E2C27E06}
+.lbl{font-size:12px;font-weight:600;color:#A9B8DB}
+.big{font:600 44px/1.1 Fraunces,Georgia,serif;margin:4px 0 16px;letter-spacing:-.02em;position:relative}
+.big small{font:600 16px "Plus Jakarta Sans",sans-serif;color:#E2C27E;margin-right:6px}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative}
+.hstat{display:grid;gap:10px}.hstat b{display:block;font-size:16px;color:#fff}
+.ring{position:relative;width:92px;height:92px;flex:none}.ring svg{transform:rotate(-90deg)}
+.ring div{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:600 19px Fraunces,Georgia,serif;color:#fff;line-height:1}
+.ring span{display:block;font:600 10px "Plus Jakarta Sans",sans-serif;color:#A9B8DB;margin-top:3px}
+h2{font:600 19px Fraunces,Georgia,serif;margin:26px 2px 12px;display:flex;justify-content:space-between;align-items:baseline}
+h2 a{font:600 13px "Plus Jakarta Sans",sans-serif;color:var(--gold);cursor:pointer}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:4px 16px;box-shadow:0 6px 20px -14px #0A142855}
+.pad{padding:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sd{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px}
+.sd b{display:block;font:600 21px Fraunces,Georgia,serif;margin:2px 0 10px}
+.tr{height:5px;border-radius:3px;background:var(--soft);overflow:hidden}.tr i{display:block;height:100%;border-radius:3px;background:var(--gold)}.tr.over i{background:var(--red)}
+.meta{font-size:12.5px;color:var(--mute)}.nm{font-weight:700}
+.row{display:flex;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line);cursor:pointer}.row:first-child{border-top:0}
+.dh{font-size:12px;font-weight:700;color:var(--mute);padding:12px 0 2px;text-transform:uppercase;letter-spacing:.04em}
+.ic{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:20px;flex:none}
+.g{flex:1;min-width:0}.r{text-align:right;font-weight:700;white-space:nowrap}
+.lnk{border:0;background:none;color:var(--red);font:600 12px "Plus Jakarta Sans",sans-serif;padding:2px 0 0;cursor:pointer}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:0 -16px 10px;padding:0 16px}
+.wrap{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:600 13px "Plus Jakarta Sans",sans-serif;white-space:nowrap;cursor:pointer}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.chip.add{border-style:dashed;color:var(--gold)}
+.tag{display:inline-flex;align-items:center;gap:4px;background:var(--soft);border-radius:999px;padding:6px 6px 6px 13px;font-size:13px;font-weight:600}
+.tag button{border:0;background:none;color:var(--mute);font-size:17px;line-height:1;padding:0 6px;cursor:pointer}
+.empty{color:var(--mute);text-align:center;padding:22px 0}
+.donut{display:flex;align-items:center;gap:18px}.donut svg{width:140px;height:140px;flex:none;transform:rotate(-90deg)}
+.leg{flex:1;display:grid;gap:8px;font-size:13px}.leg div{display:flex;align-items:center;gap:8px}.leg i{width:10px;height:10px;border-radius:3px;flex:none}.leg b{margin-left:auto}
+label{display:block;font-size:12px;font-weight:600;color:var(--mute);margin:14px 0 6px}
+input,select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:var(--soft);color:var(--ink);font:500 15px "Plus Jakarta Sans",sans-serif}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ar{display:flex;gap:8px}.ar input{flex:1}
+.btn{width:100%;border:0;border-radius:16px;background:var(--gold);color:#1B1405;padding:15px;font:700 15px "Plus Jakarta Sans",sans-serif;cursor:pointer;margin-top:16px}
+.btn.alt{background:var(--soft);color:var(--ink);margin-top:10px}.btn.del{background:transparent;color:var(--red)}.btn.sm{width:auto;margin:0;padding:12px 16px}
+.amt{font:600 34px Fraunces,Georgia,serif;border:0;background:transparent;padding:6px 0;border-bottom:2px solid var(--line);border-radius:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.mrow{display:flex;justify-content:space-between;align-items:center;padding:6px 0}.mrow b{font:600 22px Fraunces,Georgia,serif}
+.nav{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));width:calc(100% - 28px);max-width:420px;display:flex;align-items:center;justify-content:space-around;padding:8px 10px;border-radius:26px;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:0 14px 34px -12px #0A142888;z-index:5}
+.nb{border:0;background:none;color:var(--mute);display:grid;justify-items:center;gap:2px;font:600 10.5px "Plus Jakarta Sans",sans-serif;padding:6px 10px;cursor:pointer}
+.nb svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.nb.on{color:var(--gold)}
+.plus{width:54px;height:54px;border-radius:50%;border:0;background:var(--gold);color:#1B1405;font-size:28px;line-height:1;margin-top:-26px;box-shadow:0 10px 24px -6px #AE8532cc;cursor:pointer}
+.ov{position:fixed;inset:0;background:#030712cc;display:none;align-items:flex-end;justify-content:center;z-index:9}.ov.on{display:flex}
+.sheet{display:none;background:var(--card);width:100%;max-width:560px;border-radius:30px 30px 0 0;padding:10px 20px calc(22px + env(safe-area-inset-bottom,0px));max-height:94%;overflow:auto}.sheet.on{display:block}
+.sheet:before{content:"";display:block;width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto 14px}
+.sheet h3{font:600 24px Fraunces,Georgia,serif;margin:0 0 2px}
+.toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:calc(96px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-weight:600;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:20;max-width:90%}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.gh{display:flex;justify-content:space-between;align-items:baseline;font:600 17px Fraunces,Georgia,serif;margin:22px 2px 10px}.gh .meta{font:600 13px "Plus Jakarta Sans",sans-serif}
+.mprev{margin-top:14px;padding:13px 14px;border-radius:14px;background:var(--soft);font-weight:600;font-size:13.5px}
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><div class="couple">Shadi Kharcha</div><div class="mono">S</div></div>
+
+  <div class="pg on" id="p-home">
+    <div class="hero">
+      <div class="lbl">Total kharcha</div>
+      <div class="big" id="total"></div>
+      <div class="hrow">
+        <div class="hstat"><div class="lbl">Budget<b id="sBud"></b></div><div class="lbl"><span id="sLL">Left</span><b id="sLeft"></b></div></div>
+        <div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#ffffff22" stroke-width="8"/><circle id="rg" cx="50" cy="50" r="42" fill="none" stroke="#E2C27E" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 264"/></svg><div><p style="margin:0" id="pct"></p></div></div>
+      </div>
+    </div>
+    <h2>Events</h2>
+    <div class="two" id="evCards"></div>
+    <h2>Kiske liye kitna</h2>
+    <div class="two" id="forCards"></div>
+    <h2>Recent<a data-go="list">See all</a></h2>
+    <div class="card" id="recent"></div>
+  </div>
+
+  <div class="pg" id="p-list">
+    <h2 style="margin-top:8px">Expenses<a id="lsum"></a></h2>
+    <input id="q" type="search" placeholder="Search item, category, event, naam..." style="margin-bottom:12px">
+    <div class="chips" id="evchips"></div>
+    <div class="chips" id="chips"></div>
+    <div class="card" id="list"></div>
+  </div>
+
+  <div class="pg" id="p-menu">
+    <h2 style="margin-top:8px">Menu planner<a id="mcopy">Doosre event se copy</a></h2>
+    <div class="card pad">
+      <div class="g2"><div><label for="me" style="margin-top:0">Event</label><select id="me"></select></div><div><label for="mg" style="margin-top:0">Mehman (guests)</label><input id="mg" type="number" inputmode="numeric" min="0"></div></div>
+      <div class="chips" id="gq" style="margin:10px 0 0;padding:0"></div>
+    </div>
+    <button class="btn" id="addi">+ Item add karein</button>
+    <div id="dishes"></div>
+    <div class="card pad" style="margin-top:16px">
+      <div class="mrow"><span>Per head</span><b id="mph"></b></div>
+      <div class="mrow"><span>Total kharcha</span><b id="mtot"></b></div>
+      <button class="btn" id="addm">Expenses mein shamil karein</button>
+      <button class="btn alt" id="mcp">Menu list copy (WhatsApp)</button>
+    </div>
+  </div>
+
+  <div class="pg" id="p-more">
+    <h2 style="margin-top:8px">Category wise</h2>
+    <div class="card pad" id="cats"></div>
+    <h2>Apni list banayen</h2>
+    <div class="card pad">
+      <label style="margin-top:0">Family / log (kis ke liye)</label><div class="wrap" id="mpeople"></div>
+      <div class="ar" style="margin-top:8px"><input id="ap" placeholder="e.g. Khala, Bhai"><button class="btn sm" data-add="people">Add</button></div>
+      <label>Categories</label><div class="wrap" id="mcats"></div>
+      <div class="ar" style="margin-top:8px"><input id="ac" placeholder="e.g. Makeup, Sweets"><button class="btn sm" data-add="cats">Add</button></div>
+      <label>Events</label><div class="wrap" id="mevents"></div>
+      <div class="ar" style="margin-top:8px"><input id="ae" placeholder="e.g. Rukhsati, Mayun"><button class="btn sm" data-add="events">Add</button></div>
+      <label>Menu groups (dish, drinks...)</label><div class="wrap" id="mmg"></div>
+      <div class="ar" style="margin-top:8px"><input id="ag" placeholder="e.g. BBQ, Fruit"><button class="btn sm" data-add="mgroups">Add</button></div>
+      <label>Menu units (deg, bottle...)</label><div class="wrap" id="mmu"></div>
+      <div class="ar" style="margin-top:8px"><input id="au" placeholder="e.g. Tray, Carton"><button class="btn sm" data-add="units">Add</button></div>
+    </div>
+    <h2>Budget</h2>
+    <div class="card pad">
+      <label for="bud" style="margin-top:0">Total budget (Rs)</label><input id="bud" type="number" inputmode="numeric" min="0">
+      <label for="eb">Event ka budget (optional)</label>
+      <div class="g2"><select id="eb"></select><input id="ebv" type="number" inputmode="numeric" min="0" placeholder="Rs"></div>
+      <button class="btn alt" id="setb">Event budget save karein</button>
+    </div>
+    <h2>Backup &amp; share</h2>
+    <div class="card pad">
+      <button class="btn alt" id="exj" style="margin-top:0">Backup download (JSON)</button>
+      <button class="btn alt" id="imb">Backup restore karein</button>
+      <input id="imp" type="file" accept=".json,application/json" hidden>
+      <button class="btn alt" id="exc">Excel / CSV download</button>
+      <button class="btn alt" id="cp">Summary copy (WhatsApp)</button>
+      <button class="btn del" id="rst">Saara data delete karein</button>
+    </div>
+  </div>
+</main>
+
+<nav class="nav">
+  <button class="nb on" data-go="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>Home</button>
+  <button class="nb" data-go="list"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Expenses</button>
+  <button class="plus" id="fab" aria-label="Add expense">+</button>
+  <button class="nb" data-go="menu"><svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 004 0V3M8 3v18M17 21V3c-2.2 1.2-3.5 3.8-3.5 7v2.5H17"/></svg>Menu</button>
+  <button class="nb" data-go="more"><svg viewBox="0 0 24 24"><path d="M12 3v9h9a9 9 0 11-9-9z"/><path d="M15 3.5A9 9 0 0120.5 9H15z"/></svg>More</button>
+</nav>
+
+<div class="ov" id="ov">
+  <div class="sheet" id="sx">
+    <h3 id="stt">New expense</h3>
+    <label for="am">Amount (Rs)</label><input class="amt" id="am" type="number" inputmode="numeric" min="0" placeholder="0">
+    <label for="it">Item ka naam</label><input id="it" placeholder="e.g. Baree ke kapre, Hall advance">
+    <label>Category</label><div class="wrap" id="ccat"></div>
+    <label>Kis ke liye</label><div class="wrap" id="cto"></div>
+    <label>Event</label><div class="wrap" id="cev"></div>
+    <div id="nw" hidden><label id="nwl">Naya naam</label><div class="ar"><input id="nwi" placeholder="Naam likhein"><button class="btn sm" id="nwb">Add</button></div></div>
+    <label for="dt">Date</label><input id="dt" type="date">
+    <button class="btn" id="save">Save expense</button>
+    <button class="btn del" id="dele" hidden>Delete expense</button>
+    <button class="btn alt" data-x>Cancel</button>
+  </div>
+  <div class="sheet" id="sc">
+    <h3 id="cm" style="font-size:20px;margin:6px 0 4px"></h3>
+    <button class="btn" id="cyes" style="background:var(--red);color:#fff">Haan, delete karein</button>
+    <button class="btn alt" data-x>Nahi</button>
+  </div>
+  <div class="sheet" id="sm">
+    <h3 id="mtt">Naya item</h3>
+    <div class="meta" id="mctx"></div>
+    <div id="msgw"><label>Jaldi add karein</label><div class="chips" id="msg" style="margin-bottom:0"></div></div>
+    <label for="mn">Item ka naam</label><input id="mn" placeholder="e.g. Biryani, Naan, Pani bottle">
+    <label>Group</label><div class="wrap" id="mgp"></div>
+    <div id="mnw" hidden><div class="ar" style="margin-top:8px"><input id="mnwi" placeholder="Naya group (e.g. BBQ, Fruit)"><button class="btn sm" id="mnwb">Add</button></div></div>
+    <label>Hisab kaise karein</label><div class="wrap" id="mmo"></div>
+    <div id="f-head"><label for="mrate">Rate per head (Rs)</label><input id="mrate" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 450"></div>
+    <div id="f-auto"><label for="mper">Quantity kaise nikalni hai</label><div class="g2"><select id="mby"><option value="each">Har mehman ko</option><option value="serve">1 unit, itne mehman ke liye</option></select><input id="mper" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 2 ya 40"></div></div>
+    <div id="f-qty"><label for="mq">Quantity</label><input id="mq" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 8"></div>
+    <div id="f-unit"><div class="g2"><div><label for="mu">Unit</label><input id="mu" placeholder="Deg, Piece, Bottle"></div><div><label for="mp">Price per unit (Rs)</label><input id="mp" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 15000"></div></div><div class="wrap" id="mun" style="margin-top:8px"></div></div>
+    <div class="mprev" id="mprev"></div>
+    <label for="mnote">Note (optional)</label><input id="mnote" placeholder="e.g. 40 kg wali deg">
+    <button class="btn" id="msave">Save item</button>
+    <button class="btn del" id="mdel" hidden>Delete item</button>
+    <button class="btn alt" data-x>Cancel</button>
+  </div>
+  <div class="sheet" id="sk">
+    <h3>Menu copy karein</h3>
+    <div class="meta" id="skm"></div>
+    <div class="wrap" id="skl" style="margin-top:12px"></div>
+    <button class="btn alt" data-x>Cancel</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const DC=["Baree (Dulhan ka saaman)","Zewar","Clothes","Menu / Catering","Venue / Hall","Decor","Photography","Cards & Invite","Transport","Salami & Gifts","Salon & Makeup","Mithai & Dry fruits","Haq mehr","Other"],DE=["Shopping","Dholki","Mehndi","Nikkah","Barat","Walima","General"],SUG=[{n:"Biryani",g:"Main dish",m:"auto",by:"serve",per:40,u:"Deg"},{n:"Qorma",g:"Main dish",m:"auto",by:"serve",per:40,u:"Deg"},{n:"Chicken Karahi",g:"Main dish",m:"auto",by:"serve",per:4,u:"Kg"},{n:"Naan",g:"Roti / Naan",m:"auto",by:"each",per:2,u:"Piece"},{n:"Salad & Raita",g:"Salad & Raita",m:"auto",by:"serve",per:8,u:"Bowl"},{n:"Kheer",g:"Meetha",m:"auto",by:"each",per:1,u:"Bowl"},{n:"Zarda",g:"Meetha",m:"auto",by:"serve",per:40,u:"Deg"},{n:"Pani bottle",g:"Drinks",m:"auto",by:"each",per:1,u:"Bottle"},{n:"Cold drink",g:"Drinks",m:"auto",by:"serve",per:4,u:"Bottle"},{n:"Chai / Kehwa",g:"Drinks",m:"auto",by:"each",per:1,u:"Cup"}],
+DG=["Main dish","Roti / Naan","Meetha","Drinks","Salad & Raita","Other"],DU=["Deg","Kg","Piece","Bottle","Plate","Bowl","Cup","Dozen","Litre","Packet"],
+MIC={"Main dish":"\u{1F35B}","Roti / Naan":"\u{1F35E}",Meetha:"\u{1F36E}",Drinks:"\u{1F964}","Salad & Raita":"\u{1F957}",Other:"\u2728"};
+const IC={"Baree (Dulhan ka saaman)":"\u{1F381}",Zewar:"\u{1F48D}",Clothes:"\u{1F457}","Menu / Catering":"\u{1F37D}\uFE0F","Venue / Hall":"\u{1F3DB}\uFE0F",Decor:"\u{1F490}",Photography:"\u{1F4F8}","Cards & Invite":"\u2709\uFE0F",Transport:"\u{1F697}","Salami & Gifts":"\u{1F9E7}","Salon & Makeup":"\u{1F484}","Mithai & Dry fruits":"\u{1F36C}","Haq mehr":"\u{1F4DC}",Other:"\u2728"},EI={Shopping:"\u{1F6CD}\uFE0F",Dholki:"\u{1F941}",Mehndi:"\u{1F33F}",Nikkah:"\u{1F4DC}",Barat:"\u{1F697}",Walima:"\u{1F37D}\uFE0F",General:"\u{1F4CC}"},COL=["#E2C27E","#5B8CFF","#E57A9B","#4FB8A0","#8F7AE5","#F29B6A","#B6C86B","#6AA6F0","#9AA3B8"];
+let S={people:["Dulha","Abbu","Ammi"],cats:DC.slice(),events:DE.slice(),budget:0,evb:{},items:[],menus:{},mgroups:DG.slice(),units:DU.slice()},F="All",FC="All",Q="",ME="",E={},NW="",ASK=null,M={},MI=-1;
+try{let r=localStorage.getItem("shadi-v3");if(r)S=Object.assign(S,JSON.parse(r));else{r=localStorage.getItem("shadi-v2");if(r){const o=JSON.parse(r);S=Object.assign(S,o);S.people=(o.people||[]).map(p=>p.n||p);S.items=(o.items||[]).map(i=>({id:i.id,name:i.name,amount:i.amount,cat:i.cat,ev:i.ev||"General",to:(i.sh||"").startsWith("p:")?i.sh.slice(2):"",date:i.date,menu:i.menu}))}}}catch(e){}
+const uniq=(a,b)=>Array.from(new Set(a.concat(b||[])));
+S.cats=uniq(DC,S.cats);S.events=uniq(DE,S.events);if(!S.people||!S.people.length)S.people=["Dulha"];S.menus=S.menus||{};S.evb=S.evb||{};S.items=S.items||[];
+const norm=()=>{S.menus=S.menus||{};Object.values(S.menus).forEach(m=>{m.dishes=m.dishes||[];m.dishes.forEach(d=>{d.m=d.m||"head";d.g=d.g||"Other"})});S.mgroups=uniq(S.mgroups&&S.mgroups.length?S.mgroups:DG,Object.values(S.menus).flatMap(m=>m.dishes.map(d=>d.g)));S.units=S.units&&S.units.length?S.units:DU.slice()};norm();
+const $=id=>document.getElementById(id),save=()=>{try{localStorage.setItem("shadi-v3",JSON.stringify(S))}catch(e){}};
+const fmt=n=>Math.round(n).toLocaleString("en-US"),esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ico=c=>IC[c]||"\u2728",eico=e=>EI[e]||"\u2728",today=()=>new Date().toISOString().slice(0,10),sum=a=>a.reduce((t,i)=>t+i.amount,0);
+const fd=d=>{const x=new Date(d+"T00:00:00");return isNaN(x)?d:x.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})};
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("on"),2300)}
+const sheet=id=>{$("ov").classList.toggle("on",!!id);["sx","sc","sm","sk"].forEach(k=>$(k).classList.toggle("on",id===k))};
+function ask(m,cb){$("cm").textContent=m;ASK=cb;sheet("sc")}
+function go(t){document.querySelectorAll(".pg").forEach(e=>e.classList.toggle("on",e.id==="p-"+t));document.querySelectorAll(".nb").forEach(e=>e.classList.toggle("on",e.dataset.go===t));scrollTo(0,0)}
+
+const row=i=>`<div class="row" data-e="${i.id}"><div class="ic">${ico(i.cat)}</div><div class="g"><div class="nm">${esc(i.name)}</div><div class="meta">${esc(i.ev)} \u00b7 ${esc(i.cat)}${i.to?" \u00b7 "+esc(i.to)+" ke liye":""}</div></div><div class="r">Rs ${fmt(i.amount)}</div></div>`;
+const card=(l,v,b,k,tot)=>{const w=b>0?Math.min(100,v/b*100):(tot?v/tot*100:0);return `<div class="sd" ${k}><span class="meta">${l}</span><b>Rs ${fmt(v)}</b>${b>0?`<div class="meta" style="margin:-6px 0 8px">of Rs ${fmt(b)}</div>`:""}<div class="tr${b>0&&v>b?" over":""}"><i style="width:${w}%"></i></div></div>`};
+const sorted=()=>S.items.slice().sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+
+function renderList(){
+  const rows=sorted().filter(i=>(F==="All"||i.ev===F)&&(FC==="All"||i.cat===FC)&&(!Q||(i.name+" "+i.cat+" "+i.ev+" "+i.to).toLowerCase().includes(Q)));
+  let h="",d="";rows.forEach(i=>{if(i.date!==d){d=i.date;h+=`<div class="dh">${fd(d)}</div>`}h+=row(i)});
+  $("list").innerHTML=h||'<div class="empty">Koi expense nahi mila.</div>';
+  $("lsum").textContent=rows.length+" \u00b7 Rs "+fmt(sum(rows));
+}
+function render(){
+  const total=sum(S.items),b=S.budget>0,left=S.budget-total,pc=b?total/S.budget:0;
+  $("total").innerHTML="<small>Rs</small>"+fmt(total);
+  $("sBud").textContent=b?"Rs "+fmt(S.budget):"Not set";$("sLL").textContent=b&&left<0?"Over by":"Left";$("sLeft").textContent=b?"Rs "+fmt(Math.abs(left)):"-";
+  $("rg").setAttribute("stroke-dasharray",Math.min(1,pc)*264+" 264");$("rg").setAttribute("stroke",b&&left<0?"#F08A7B":"#E2C27E");
+  $("pct").innerHTML=b?Math.round(pc*100)+"%<span>used</span>":"--<span>set budget</span>";
+  const evs=S.events.map(e=>[e,sum(S.items.filter(i=>i.ev===e))]).filter(([e,v])=>v>0||e!=="General");
+  $("evCards").innerHTML=evs.map(([e,v])=>card(eico(e)+" "+esc(e),v,S.evb[e]||0,`data-ev="${esc(e)}" style="cursor:pointer"`,total)).join("");
+  const fo=S.people.map(p=>[p,sum(S.items.filter(i=>i.to===p))]),sh=sum(S.items.filter(i=>!S.people.includes(i.to)));
+  $("forCards").innerHTML=fo.map(([p,v])=>card(esc(p)+" ke liye",v,0,"",total)).join("")+card("Sab ke liye (shared)",sh,0,"",total);
+  $("recent").innerHTML=S.items.length?sorted().slice(0,4).map(row).join(""):'<div class="empty">Pehla expense add karne ke liye + dabayen.</div>';
+  $("evchips").innerHTML=["All",...S.events].map(e=>`<button class="chip${e===F?" on":""}" data-fe="${esc(e)}">${e==="All"?"All events":eico(e)+" "+esc(e)}</button>`).join("");
+  $("chips").innerHTML=["All",...S.cats].map(c=>`<button class="chip${c===FC?" on":""}" data-c="${esc(c)}">${c==="All"?"All categories":ico(c)+" "+esc(c)}</button>`).join("");
+  renderList();
+  const bc={};S.items.forEach(i=>bc[i.cat]=(bc[i.cat]||0)+i.amount);const ce=Object.entries(bc).sort((a,b)=>b[1]-a[1]);let off=0;
+  const seg=ce.map(([c,v],k)=>{const l=v/total*264,s=`<circle cx="50" cy="50" r="42" fill="none" stroke="${COL[k%COL.length]}" stroke-width="14" stroke-dasharray="${Math.max(0,l-1.5)} 264" stroke-dashoffset="${-off}"/>`;off+=l;return s}).join("");
+  $("cats").innerHTML=ce.length?`<div class="donut"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="var(--soft)" stroke-width="14"/>${seg}</svg><div class="leg">${ce.map(([c,v],k)=>`<div><i style="background:${COL[k%COL.length]}"></i>${esc(c)}<b>${Math.round(v/total*100)}%</b></div>`).join("")}</div></div>`+ce.map(([c,v])=>`<div class="row" style="cursor:default"><div class="ic">${ico(c)}</div><div class="g nm">${esc(c)}</div><div class="r">Rs ${fmt(v)}</div></div>`).join(""):'<div class="empty">Abhi kuch nahi.</div>';
+  const tg=(k,a)=>a.map(x=>`<span class="tag">${esc(x)}<button data-rm="${k}" data-n="${esc(x)}" aria-label="Remove ${esc(x)}">\u00d7</button></span>`).join("");
+  $("mpeople").innerHTML=tg("people",S.people);$("mcats").innerHTML=tg("cats",S.cats);$("mevents").innerHTML=tg("events",S.events);$("mmg").innerHTML=tg("mgroups",S.mgroups);$("mmu").innerHTML=tg("units",S.units);
+  $("bud").value=S.budget||"";renderMenu();
+}
+const mico=g=>MIC[g]||"\u{1F37D}\uFE0F",fmtq=n=>Number.isInteger(n)?fmt(n):String(+n.toFixed(2));
+const qOf=(d,g)=>d.m==="auto"?(g>0&&d.per>0?Math.ceil((d.by==="serve"?g/d.per:g*d.per)-1e-9):0):d.m==="qty"?(d.q||0):0,
+mcost=(d,g)=>d.m==="head"?(d.r||0)*g:qOf(d,g)*(d.p||0),
+menuTotal=m=>m.dishes.reduce((a,d)=>a+mcost(d,m.guests||0),0);
+const mrow=(d,i,g)=>{const c=mcost(d,g),meta=d.m==="head"?"Rs "+fmt(d.r||0)+" per head":fmtq(qOf(d,g))+" "+esc(d.u||"")+(d.p?" \u00b7 Rs "+fmt(d.p)+" each":" \u00b7 price set karein");
+  return `<div class="row" data-mi="${i}"><div class="ic">${mico(d.g)}</div><div class="g"><div class="nm">${esc(d.n)}</div><div class="meta">${meta}</div>${d.note?`<div class="meta">${esc(d.note)}</div>`:""}</div><div class="r">Rs ${fmt(c)}<div class="meta">${g>0&&d.m!=="head"?"Rs "+fmt(c/g)+" /head":""}</div></div></div>`};
+function renderMenu(skipG){
+  if(!ME||!S.events.includes(ME))ME=S.events.includes("Barat")?"Barat":S.events[0];
+  const opt=(a,s)=>a.map(e=>`<option${e===s?" selected":""}>${esc(e)}</option>`).join("");
+  $("me").innerHTML=opt(S.events,ME);
+  const m=S.menus[ME]||{guests:0,dishes:[]},g=m.guests||0,tot=menuTotal(m);
+  if(!skipG)$("mg").value=m.guests||"";
+  $("gq").innerHTML=[50,100,150,200,300,500].map(n=>`<button class="chip${n===g?" on":""}" data-gq="${n}">${n}</button>`).join("");
+  const gs=uniq(S.mgroups,m.dishes.map(d=>d.g));
+  $("dishes").innerHTML=m.dishes.length?gs.map(gn=>{const its=m.dishes.map((d,i)=>[d,i]).filter(x=>x[0].g===gn);if(!its.length)return"";
+    return `<div class="gh"><span>${mico(gn)} ${esc(gn)}</span><span class="meta">Rs ${fmt(its.reduce((a,x)=>a+mcost(x[0],g),0))}</span></div><div class="card">${its.map(x=>mrow(x[0],x[1],g)).join("")}</div>`}).join(""):'<div class="card"><div class="empty">Abhi koi item nahi. Upar se item add karein.</div></div>';
+  $("mph").textContent="Rs "+fmt(g>0?tot/g:m.dishes.reduce((a,d)=>a+(d.m==="head"?d.r||0:0),0));$("mtot").textContent="Rs "+fmt(tot);
+  const e0=$("eb").value||ME;$("eb").innerHTML=opt(S.events,e0);$("ebv").value=S.evb[$("eb").value]||"";
+}
+/* ---- add / edit sheet ---- */
+function chipRow(k,list,sel){const all=k==="to"?`<button class="chip${sel===""?" on":""}" data-k="to" data-v="">Sab ke liye</button>`:"";
+  return all+list.map(x=>`<button class="chip${x===sel?" on":""}" data-k="${k}" data-v="${esc(x)}">${k==="cat"?ico(x)+" ":k==="ev"?eico(x)+" ":""}${esc(x)}</button>`).join("")+`<button class="chip add" data-k="${k}" data-v="__new">+ Naya</button>`}
+function drawSheet(){$("ccat").innerHTML=chipRow("cat",S.cats,E.cat);$("cto").innerHTML=chipRow("to",S.people,E.to);$("cev").innerHTML=chipRow("ev",S.events,E.ev)}
+function openSheet(id){const it=id?S.items.find(i=>String(i.id)===String(id)):null;
+  E=it?Object.assign({},it):{id:null,cat:S.cats[0],ev:F!=="All"?F:"Shopping",to:"",date:today()};
+  $("stt").textContent=it?"Edit expense":"New expense";$("save").textContent=it?"Update expense":"Save expense";$("dele").hidden=!it;
+  $("am").value=it?it.amount:"";$("it").value=it?it.name:"";$("dt").value=E.date||today();$("nw").hidden=true;NW="";
+  drawSheet();sheet("sx");setTimeout(()=>$(it?"it":"am").focus(),60)}
+const LST={cat:"cats",ev:"events",to:"people"},LBL={cat:"Nayi category",ev:"Naya event",to:"Naya naam (kis ke liye)"};
+function addItem(k,v){v=v.trim();if(!v)return null;const a=S[k],x=a.find(z=>z.toLowerCase()===v.toLowerCase());if(x)return x;a.push(v);save();return v}
+/* ---- events ---- */
+document.addEventListener("click",e=>{const t=e.target,q=s=>t.closest(s);let c;
+  if(c=q("[data-go]"))return go(c.dataset.go);
+  if(q("[data-x]")||t===$("ov"))return sheet(null);
+  if(c=q("[data-k]")){const k=c.dataset.k,v=c.dataset.v;if(v==="__new"){NW=k;$("nwl").textContent=LBL[k];$("nw").hidden=false;$("nwi").value="";$("nwi").focus()}else{E[k]=v;drawSheet()}return}
+  if(c=q("[data-e]"))return openSheet(c.dataset.e);
+  if(c=q("[data-ev]")){F=c.dataset.ev;FC="All";render();return go("list")}
+  if(c=q("[data-fe]")){F=c.dataset.fe;return render()}
+  if(c=q("[data-c]")){FC=c.dataset.c;return render()}
+  if(c=q("[data-add]")){const k=c.dataset.add,i=$({people:"ap",cats:"ac",events:"ae",mgroups:"ag",units:"au"}[k]);if(!i.value.trim())return;addItem(k,i.value);i.value="";render();return toast("Add ho gaya")}
+  if(c=q("[data-rm]")){const k=c.dataset.rm,n=c.dataset.n,f={people:"to",cats:"cat",events:"ev"}[k];
+    if(k==="mgroups"?Object.values(S.menus).some(m=>m.dishes.some(d=>d.g===n)):f&&S.items.some(i=>i[f]===n))return toast(n+(k==="mgroups"?" menu mein":" expenses mein")+" use ho raha hai, pehle wo badlein");
+    if(S[k].length<2)return toast("Kam az kam ek rakhna zaroori hai");S[k]=S[k].filter(x=>x!==n);save();return render()}
+  if(c=q("[data-gq]")){mget().guests=+c.dataset.gq;save();return renderMenu()}
+  if(c=q("[data-mi]"))return openItem(+c.dataset.mi);
+  if(c=q("[data-mgr]")){if(c.dataset.mgr==="__new"){$("mnw").hidden=false;$("mnwi").value="";$("mnwi").focus()}else{M.g=c.dataset.mgr;drawM()}return}
+  if(c=q("[data-mmo]")){M.m=c.dataset.mmo;drawM();return prevM()}
+  if(c=q("[data-mun]")){$("mu").value=c.dataset.mun;return prevM()}
+  if(c=q("[data-msg]")){const x=SUG[+c.dataset.msg];addItem("mgroups",x.g);addItem("units",x.u);M.g=x.g;M.m=x.m;$("mn").value=x.n;$("mby").value=x.by;$("mper").value=x.per;$("mu").value=x.u;drawM();return prevM()}
+  if(c=q("[data-cp]")){const src=S.menus[c.dataset.cp],run=()=>{const m=mget();m.dishes=JSON.parse(JSON.stringify(src.dishes));if(!m.guests)m.guests=src.guests||0;save();sheet(null);renderMenu();toast("Menu copy ho gaya")};
+    return mget().dishes.length?ask("Maujooda menu replace ho jayega. Karein?",run):run()}
+});
+$("fab").onclick=()=>openSheet();
+$("nwb").onclick=()=>{const v=addItem(LST[NW],$("nwi").value);if(!v)return;E[NW]=v;$("nw").hidden=true;drawSheet()};
+$("save").onclick=()=>{const name=$("it").value.trim(),amount=parseFloat($("am").value);
+  if(!(amount>0))return toast("Amount 0 se zyada likhein");if(!name)return toast("Item ka naam likhein");
+  const o={name,amount,cat:E.cat,ev:E.ev,to:E.to,date:$("dt").value||today()};
+  if(E.id){Object.assign(S.items.find(i=>i.id===E.id),o);toast("Expense update ho gaya")}else{S.items.push(Object.assign({id:Date.now()},o));toast("Expense save ho gaya")}
+  save();render();sheet(null)};
+$("dele").onclick=()=>ask("Yeh expense delete karein?",()=>{S.items=S.items.filter(i=>i.id!==E.id);save();render();sheet(null);toast("Delete ho gaya")});
+$("cyes").onclick=()=>{const f=ASK;ASK=null;if(f)f()};
+$("q").oninput=()=>{Q=$("q").value.trim().toLowerCase();renderList()};
+$("bud").onchange=()=>{S.budget=parseFloat($("bud").value)||0;save();render()};
+$("eb").onchange=()=>{$("ebv").value=S.evb[$("eb").value]||""};
+$("setb").onclick=()=>{const v=parseFloat($("ebv").value)||0,e=$("eb").value;if(v>0)S.evb[e]=v;else delete S.evb[e];save();render();toast("Budget save ho gaya")};
+/* ---- menu ---- */
+const mget=()=>S.menus[ME]=S.menus[ME]||{guests:0,dishes:[]};
+$("me").onchange=()=>{ME=$("me").value;renderMenu()};
+$("mg").oninput=()=>{mget().guests=parseInt($("mg").value)||0;save();renderMenu(true)};
+const readM=()=>({n:$("mn").value.trim(),g:M.g,m:M.m,r:parseFloat($("mrate").value)||0,by:$("mby").value,per:parseFloat($("mper").value)||0,q:parseFloat($("mq").value)||0,u:$("mu").value.trim(),p:parseFloat($("mp").value)||0,note:$("mnote").value.trim()});
+function prevM(){const d=readM(),g=mget().guests||0;let t;
+  if(d.m==="head")t="Rs "+fmt(d.r)+" \u00d7 "+fmt(g)+" mehman = Rs "+fmt(d.r*g);
+  else if(d.m==="auto"&&!g)t="Upar mehman ki tadad likhein";
+  else{const q=qOf(d,g);t=(d.m==="auto"?fmt(g)+" mehman ke liye ":"")+fmtq(q)+" "+d.u+" \u00d7 Rs "+fmt(d.p)+" = Rs "+fmt(q*d.p)}
+  $("mprev").textContent=t}
+function drawM(){
+  $("mgp").innerHTML=uniq(S.mgroups,[M.g]).map(x=>`<button class="chip${x===M.g?" on":""}" data-mgr="${esc(x)}">${mico(x)} ${esc(x)}</button>`).join("")+`<button class="chip add" data-mgr="__new">+ Naya</button>`;
+  $("mmo").innerHTML=[["qty","Khud quantity"],["auto","Mehman ke hisab se"],["head","Per head rate"]].map(([k,l])=>`<button class="chip${k===M.m?" on":""}" data-mmo="${k}">${l}</button>`).join("");
+  $("f-head").hidden=M.m!=="head";$("f-auto").hidden=M.m!=="auto";$("f-qty").hidden=M.m!=="qty";$("f-unit").hidden=M.m==="head";
+  $("mun").innerHTML=S.units.map(u=>`<button class="chip" data-mun="${esc(u)}">${esc(u)}</button>`).join("");
+  $("msgw").hidden=MI>=0;$("msg").innerHTML=SUG.map((x,i)=>`<button class="chip" data-msg="${i}">${esc(x.n)}</button>`).join("")}
+function openItem(i){MI=i;const d=i>=0?mget().dishes[i]:null,g=mget().guests||0;
+  M=d?Object.assign({},d):{g:S.mgroups[0],m:"qty"};
+  $("mtt").textContent=d?"Item edit karein":"Naya item";$("mctx").textContent=ME+" \u00b7 "+(g?fmt(g)+" mehman":"mehman abhi set nahi");
+  $("mn").value=d?d.n:"";$("mby").value=M.by||"each";$("mper").value=M.per||"";$("mq").value=M.q||"";$("mu").value=d?(M.u||""):"Deg";$("mp").value=M.p||"";$("mrate").value=M.r||"";$("mnote").value=M.note||"";
+  $("mnw").hidden=true;$("mdel").hidden=!d;$("msave").textContent=d?"Update item":"Save item";
+  drawM();prevM();sheet("sm");setTimeout(()=>$("mn").focus(),60)}
+function openCopy(){const o=S.events.filter(e=>e!==ME&&(S.menus[e]||{dishes:[]}).dishes.length);
+  $("skl").innerHTML=o.map(e=>`<button class="chip" data-cp="${esc(e)}">${eico(e)} ${esc(e)}</button>`).join("");
+  $("skm").textContent=o.length?ME+" mein kis event ka menu copy karna hai?":"Abhi kisi doosre event mein menu nahi hai.";sheet("sk")}
+$("addi").onclick=()=>openItem(-1);
+$("mcopy").onclick=openCopy;
+$("sm").addEventListener("input",prevM);$("sm").addEventListener("change",prevM);
+$("mnwb").onclick=()=>{const v=addItem("mgroups",$("mnwi").value);if(!v)return;M.g=v;$("mnw").hidden=true;drawM()};
+$("msave").onclick=()=>{const d=readM();
+  if(!d.n)return toast("Item ka naam likhein");
+  if(d.m==="head"&&$("mrate").value==="")return toast("Rate per head likhein");
+  if(d.m==="qty"&&!(d.q>0))return toast("Quantity likhein");
+  if(d.m==="auto"&&!(d.per>0))return toast("Quantity ka hisab likhein");
+  if(d.m!=="head"&&d.u)addItem("units",d.u);
+  const m=mget(),ed=MI>=0;if(ed)m.dishes[MI]=d;else m.dishes.push(d);
+  save();renderMenu();sheet(null);toast(ed?"Item update ho gaya":"Item add ho gaya")};
+$("mdel").onclick=()=>ask("Yeh item delete karein?",()=>{mget().dishes.splice(MI,1);save();renderMenu();sheet(null);toast("Delete ho gaya")});
+$("addm").onclick=()=>{const m=mget(),tot=menuTotal(m);if(!(tot>0))return toast("Pehle items aur unki price add karein");
+  const name="Menu - "+ME+" ("+(m.guests||0)+" mehman)",ex=S.items.find(i=>i.menu===ME);
+  if(ex){ex.amount=tot;ex.name=name}else S.items.push({id:Date.now(),name,amount:tot,cat:"Menu / Catering",ev:ME,to:"",menu:ME,date:today()});
+  save();render();toast(ex?"Menu ka kharcha update ho gaya":"Menu Expenses mein add ho gaya")};
+$("mcp").onclick=async()=>{const m=mget(),g=m.guests||0;if(!m.dishes.length)return toast("Pehle items add karein");
+  const L=["Menu - "+ME+" ("+g+" mehman)"];
+  uniq(S.mgroups,m.dishes.map(d=>d.g)).forEach(gn=>{const its=m.dishes.filter(d=>d.g===gn);if(!its.length)return;L.push("",gn+":");
+    its.forEach(d=>L.push("- "+d.n+": "+(d.m==="head"?"Rs "+fmt(d.r||0)+" per head":(fmtq(qOf(d,g))+" "+(d.u||"")).trim())+(d.note?" ("+d.note+")":"")))});
+  L.push("","Total: Rs "+fmt(menuTotal(m)));
+  try{await navigator.clipboard.writeText(L.join("\n"));toast("Copy ho gaya, WhatsApp mein paste karein")}catch(e){prompt("Yeh text copy karein:",L.join("\n"))}};
+/* ---- backup ---- */
+function dl(name,text,type){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove();toast("Download shuru ho gaya")}
+$("exj").onclick=()=>dl("shadi-kharcha-backup-"+today()+".json",JSON.stringify(S,null,1),"application/json");
+$("exc").onclick=()=>{const q=v=>'"'+String(v).replace(/"/g,'""')+'"';dl("shadi-kharcha-"+today()+".csv","\uFEFFDate,Item,Amount,Category,Event,For\n"+sorted().map(i=>[i.date,q(i.name),i.amount,q(i.cat),q(i.ev),q(i.to||"Shared")].join(",")).join("\n"),"text/csv")};
+$("imb").onclick=()=>$("imp").click();
+$("imp").onchange=()=>{const f=$("imp").files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result);if(!Array.isArray(o.items))throw 0;ask("Backup restore karne se maujooda data replace hoga. Karein?",()=>{S=Object.assign({people:["Dulha"],cats:DC.slice(),events:DE.slice(),budget:0,evb:{},items:[],menus:{},mgroups:DG.slice(),units:DU.slice()},o);norm();save();sheet(null);render();toast("Backup restore ho gaya")})}catch(e){toast("Yeh sahi backup file nahi hai")}};r.readAsText(f);$("imp").value=""};
+$("rst").onclick=()=>ask("Saara data delete ho jayega. Pakka karein?",()=>{S.items=[];S.menus={};S.evb={};S.budget=0;save();sheet(null);render();toast("Data saaf ho gaya")});
+$("cp").onclick=async()=>{const ev=S.events.map(e=>[e,sum(S.items.filter(i=>i.ev===e))]).filter(x=>x[1]>0);
+  const txt=["Shadi Kharcha","Total: Rs "+fmt(sum(S.items)),"",...ev.map(x=>x[0]+": Rs "+fmt(x[1])),"",...S.people.map(p=>p+" ke liye: Rs "+fmt(sum(S.items.filter(i=>i.to===p))))].join("\n");
+  try{await navigator.clipboard.writeText(txt);toast("Copy ho gaya, WhatsApp mein paste karein")}catch(e){prompt("Yeh text copy karein:",txt)}};
+render();
+if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script>
+</body>
+</html>
